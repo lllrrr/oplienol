@@ -18,6 +18,13 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon-dark-mod/g' feeds/luci/collectio
 #sed -i 's/+kmod-nls-base @BUILD_PATENTED/+kmod-nls-base/g' feeds/packages/kernel/exfat-nofuse/Makefile
 sed -i 's/IMG_PREFIX:=$(VERSION_DIST_SANITIZED)/IMG_PREFIX:=R9.3-$(shell date +%F-%H)-$(VERSION_DIST_SANITIZED)/g' include/image.mk
 
+rm -rf package/default-settings/
+rm -rf package/diy/
+rm -rf package/fullconenat/
+rm -rf package/lean/
+rm -rf package/OpenAppFilter/
+rm -rf feeds/luci/applications/luci-app-smartdns/
+rm -rf feeds/packages/net/smartdns/
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/ddns-scripts_aliyun package/lean/ddns-scripts_aliyun
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/ddns-scripts_dnspod package/lean/ddns-scripts_dnspod
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/default-settings package/lean/default-settings
@@ -142,7 +149,7 @@ git clone https://github.com/jerrykuku/lua-maxminddb package/lean/lua-maxminddb
 #svn co https://github.com/openwrt/packages/trunk/libs/libmaxminddb package/lean/libmaxminddb
 #svn co https://github.com/openwrt/packages/trunk/utils/zstd package/lean/zstd
 git clone https://github.com/lllrrr/frpmod package/lean/frpmod
-rm -rf feeds/packages/net/kcptun/
+#rm -rf feeds/packages/net/kcptun/
 #rm -rf feeds/packages/utils/ttyd/
 git clone https://github.com/pymumu/openwrt-smartdns package/lean/openwrt-smartdns
 git clone -b lede https://github.com/pymumu/luci-app-smartdns package/lean/luci-app-smartdns
