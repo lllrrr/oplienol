@@ -18,13 +18,15 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon-dark-mod/g' feeds/luci/collectio
 #sed -i 's/+kmod-nls-base @BUILD_PATENTED/+kmod-nls-base/g' feeds/packages/kernel/exfat-nofuse/Makefile
 sed -i 's/IMG_PREFIX:=$(VERSION_DIST_SANITIZED)/IMG_PREFIX:=R9.3-$(shell date +%F-%H)-$(VERSION_DIST_SANITIZED)/g' include/image.mk
 
+rm -rf package/lean
 rm -rf package/default-settings
 rm -rf package/diy
 #rm -rf package/network/fullconenat
-rm -rf package/lean
-rm -rf package/OpenAppFilter
-rm -rf feeds/luci/applications/luci-app-smartdns
+#rm -rf feeds/luci/applications/luci-app-smartdns
 #rm -rf feeds/packages/net/smartdns
+#rm -rf feeds/luci/transplant/luci-app-ttyd
+svn co https://github.com/Lienol/openwrt/trunk/package/lean/luci-app-sfe package/lean/luci-app-sfe
+svn co https://github.com/Lienol/openwrt/trunk/package/diy/luci-app-adguardhome package/lean/luci-app-adguardhome
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/ddns-scripts_aliyun package/lean/ddns-scripts_aliyun
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/ddns-scripts_dnspod package/lean/ddns-scripts_dnspod
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/default-settings package/lean/default-settings
@@ -105,7 +107,7 @@ git clone https://github.com/vison9889/luci-app-eqos package/lean/luci-app-eqos
 #sed -i 's/3.6.8/3.7.0/g' package/lean/BaiduPCS-Web/BaiduPCS-Web/Makefile
 git clone https://github.com/tty228/luci-app-serverchan package/lean/luci-app-serverchan
 #git clone https://github.com/happyzhang1995/openwrt-adguardhome package/lean/openwrt-adguardhome
-git clone https://github.com/rufengsuixing/luci-app-adguardhome package/lean/luci-app-adguardhome
+#git clone https://github.com/rufengsuixing/luci-app-adguardhome package/lean/luci-app-adguardhome
 #git clone https://github.com/stamilo/luci-app-fullconenat package/lean/luci-app-fullconenat
 #sed -i 's/NAT类型-Full cone NAT/NAT类型/g' package/lean/luci-app-fullconenat/po/zh-cn/fullconenat.po
 #git clone https://github.com/LGA1150/openwrt-fullconenat package/lean/openwrt-fullconenat
