@@ -18,7 +18,7 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon-dark-mod/g' feeds/luci/collectio
 #sed -i 's/+kmod-nls-base @BUILD_PATENTED/+kmod-nls-base/g' feeds/packages/kernel/exfat-nofuse/Makefile
 sed -i 's/IMG_PREFIX:=$(VERSION_DIST_SANITIZED)/IMG_PREFIX:=L9-$(shell date +%F-%H)-$(VERSION_DIST_SANITIZED)/g' include/image.mk
 
-#rm -rf package/default-settings
+rm -rf package/default-settings
 rm -rf package/diy
 rm -rf package/diy/luci-app-adguardhome
 rm -rf package/diy/luci-app-diskman
@@ -42,7 +42,7 @@ rm -rf package/lean/ddns-scripts_aliyun
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/ddns-scripts_aliyun package/lean/ddns-scripts_aliyun
 rm -rf package/lean/ddns-scripts_dnspod
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/ddns-scripts_dnspod package/lean/ddns-scripts_dnspod
-#git clone https://github.com/lllrrr/default-settings package/lean/default-settings
+git clone https://github.com/lllrrr/default-settings package/lean/default-settings
 rm -rf package/lean/luci-app-arpbind
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-arpbind package/lean/luci-app-arpbind
 rm -rf package/lean/adbyby
@@ -107,6 +107,7 @@ svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/UnblockNeteaseMus
 rm -rf package/lean/UnblockNeteaseMusicGo
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/UnblockNeteaseMusicGo package/lean/UnblockNeteaseMusicGo
 sed -i 's/解锁网易云灰色歌曲/解锁网易云/g' package/lean/luci-app-unblockmusic/po/zh-cn/unblockmusic.po
+sed -i 's/PassWall/科学上网/g' feeds/diy1/openwrt-passwall/luci-app-passwall/po/zh-cn/passwall.po
 #git clone https://github.com/lllrrr/mypswold package/mypswold
 svn co https://github.com/lllrrr/myttyd/trunk/luci-app-terminal package/lean/luci-app-terminal
 #sed -i 's_../../_$(TOPDIR)/feeds/luci/_' package/lean/luci-app-terminal/Makefile
@@ -196,6 +197,6 @@ git clone https://github.com/lllrrr/mysmartdns package/mysmartdns
 #sed -i 's_../../_$(TOPDIR)/feeds/luci/_' package/lean/luci-app-smartdns/Makefile
 cp ../target.mk include/
 #cp ../luci.mk feeds/luci/
-#cp ../zzz-default-settings package/lean/default-settings/files/
-#sed -i "s/8.3.19.0410/9.$(date "+%y.%m%d.%H")/g" package/lean/default-settings/files/zzz-default-settings
-#sed -i "s/8.3.19.0410/9.$(date "+%y.%m%d.%H")/g" files/etc/banner
+cp ../zzz-default-settingsac package/lean/default-settings/files/zzz-default-settings
+sed -i "s/8.3.19.0410/9.$(date "+%y.%m%d.%H")/g" package/lean/default-settings/files/zzz-default-settings
+sed -i "s/8.3.19.0410/9.$(date "+%y.%m%d.%H")/g" files/etc/banner
