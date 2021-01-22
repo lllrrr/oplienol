@@ -107,7 +107,7 @@ svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/UnblockNeteaseMus
 rm -rf package/lean/UnblockNeteaseMusicGo
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/UnblockNeteaseMusicGo package/lean/UnblockNeteaseMusicGo
 sed -i 's/解锁网易云灰色歌曲/解锁网易云/g' package/lean/luci-app-unblockmusic/po/zh-cn/unblockmusic.po
-sed -i 's/PassWall/科学上网/g' feeds/diy1/openwrt-passwall/luci-app-passwall/po/zh-cn/passwall.po
+sed -i 's/PassWall/科学上网/g' feeds/diy1/luci-app-passwall/po/zh-cn/passwall.po
 #git clone https://github.com/lllrrr/mypswold package/mypswold
 svn co https://github.com/lllrrr/myttyd/trunk/luci-app-terminal package/lean/luci-app-terminal
 #sed -i 's_../../_$(TOPDIR)/feeds/luci/_' package/lean/luci-app-terminal/Makefile
